@@ -1,0 +1,364 @@
+
+@import "tailwindcss";
+
+/* =========================================
+   STUDENTFLOW — PREMIUM DESIGN SYSTEM
+========================================= */
+
+:root {
+  color-scheme: light;
+
+  --background: #f6f7fb;
+  --foreground: #172033;
+
+  --surface: #ffffff;
+  --surface-secondary: #f9faff;
+
+  --primary: #635bff;
+  --primary-hover: #5148e5;
+  --primary-light: #eeedff;
+
+  --secondary: #0f172a;
+
+  --muted: #8992a6;
+  --border: #e9ebf2;
+
+  --success: #16a37a;
+  --success-light: #e7f8f1;
+
+  --warning: #e99b35;
+  --warning-light: #fff5e5;
+
+  --danger: #e45c6b;
+  --danger-light: #fff0f1;
+
+  --info: #4285ed;
+  --info-light: #edf4ff;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+
+  --shadow-sm: 0 2px 8px rgba(23, 32, 51, 0.035);
+  --shadow-md: 0 8px 24px rgba(23, 32, 51, 0.055);
+  --shadow-lg: 0 16px 40px rgba(23, 32, 51, 0.09);
+
+  --transition: 180ms ease;
+}
+
+/* =========================================
+   TAILWIND THEME
+========================================= */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --color-primary: var(--primary);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+}
+
+/* =========================================
+   RESET & BASE
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: #dcd9ff;
+  color: #342b9d;
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d6d9e4;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #aeb4c5;
+}
+
+/* =========================================
+   REUSABLE SURFACES
+========================================= */
+
+.surface {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.surface-hover {
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition);
+}
+
+.surface-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: #dcdcf7;
+}
+
+/* =========================================
+   BUTTON SYSTEM
+========================================= */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  transition: all var(--transition);
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  box-shadow: 0 5px 15px rgba(99, 91, 255, 0.22);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: white;
+  color: var(--foreground);
+  font-weight: 600;
+  transition: all var(--transition);
+}
+
+.btn-secondary:hover {
+  background: var(--surface-secondary);
+  border-color: #c9c9ef;
+}
+
+/* =========================================
+   INPUT SYSTEM
+========================================= */
+
+.input-modern {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: white;
+  color: var(--foreground);
+  outline: none;
+  transition: all var(--transition);
+}
+
+.input-modern::placeholder {
+  color: #a5adbd;
+}
+
+.input-modern:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99, 91, 255, 0.11);
+}
+
+/* =========================================
+   STATUS BADGES
+========================================= */
+
+.badge-success {
+  background: var(--success-light);
+  color: var(--success);
+}
+
+.badge-warning {
+  background: var(--warning-light);
+  color: #b7791f;
+}
+
+.badge-danger {
+  background: var(--danger-light);
+  color: var(--danger);
+}
+
+.badge-info {
+  background: var(--info-light);
+  color: var(--info);
+}
+
+.badge-primary {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+/* =========================================
+   GRADIENTS
+========================================= */
+
+.gradient-primary {
+  background: linear-gradient(135deg, #635bff 0%, #8975ff 100%);
+}
+
+.gradient-dark {
+  background: linear-gradient(135deg, #171b3b 0%, #302c67 100%);
+}
+
+.gradient-soft {
+  background: linear-gradient(135deg, #f0efff 0%, #f9f7ff 100%);
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulseSoft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 350ms ease both;
+}
+
+.animate-slide-in {
+  animation: slideIn 300ms ease both;
+}
+
+.animate-pulse-soft {
+  animation: pulseSoft 2s ease-in-out infinite;
+}
+
+/* =========================================
+   FOCUS ACCESSIBILITY
+========================================= */
+
+:focus-visible {
+  outline: 3px solid rgba(99, 91, 255, 0.35);
+  outline-offset: 3px;
+}
+
+/* =========================================
+   RESPONSIVE UTILITIES
+========================================= */
+
+@media (max-width: 768px) {
+  body {
+    font-size: 13px;
+  }
+
+  .surface {
+    border-radius: var(--radius-md);
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
